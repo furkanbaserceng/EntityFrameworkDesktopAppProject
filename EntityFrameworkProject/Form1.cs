@@ -105,6 +105,9 @@ namespace EntityFrameworkProject
                                                                     Convert.ToDecimal(tbxMaxUnitPrice.Text));
             btnGetAllProducts.Visible = true;
             btnGetByUnitPrice.Visible = false;
+
+            tbxMinUnitPrice.Clear();
+            tbxMaxUnitPrice.Clear();
         
         }
 
