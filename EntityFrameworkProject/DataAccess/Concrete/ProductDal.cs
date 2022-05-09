@@ -13,6 +13,7 @@ namespace EntityFrameworkProject.DataAccess.Concrete
     public class ProductDal : IProductDal
     {
 
+       
 
         public List<Product> GetAll()
         {
@@ -24,6 +25,28 @@ namespace EntityFrameworkProject.DataAccess.Concrete
             }
 
 
+        }
+
+        public List<Product> GetByNameFilter(string value)
+        {
+            using (ETradeSampleContext context = new ETradeSampleContext())
+            {
+
+                return context.Products.Where(p => p.ProductName.ToLower().Contains(value)).ToList(); //küçük harfe çevirmeden de sıkıntısız çalışır ama çevirmek best practisedir.Çünkü direkt veri tabanına gönderdik sorguyu.Eğer kolaksiyona where ile link sorgusu verilseydi tolower çevrimi şart olacaktı.aksi halde büyük küçük harf duyarlılığı sonuçları etkileyecekti.
+
+            }
+
+
+        }
+
+        public List<Product> GetByUnitPriceFilter(decimal price1, decimal price2)
+        {
+            using (ETradeSampleContext context=new ETradeSampleContext())
+            {
+
+                return context.Products.Where(p=>p.ProductUnitPrice>=price1 && p.ProductUnitPrice<=price2).ToList();
+
+            }
         }
 
         public void Add(Product product)
@@ -75,6 +98,6 @@ namespace EntityFrameworkProject.DataAccess.Concrete
 
         }
 
-
+        
     }
 }

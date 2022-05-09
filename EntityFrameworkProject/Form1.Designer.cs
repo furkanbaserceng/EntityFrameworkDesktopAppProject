@@ -48,16 +48,28 @@
             this.btnProductUpdate = new System.Windows.Forms.Button();
             this.tbxProductNameUpdate = new System.Windows.Forms.TextBox();
             this.lblProductNameUpdate = new System.Windows.Forms.Label();
+            this.gbxProductSearchByName = new System.Windows.Forms.GroupBox();
+            this.tbxSearchByName = new System.Windows.Forms.TextBox();
+            this.lblSearchByName = new System.Windows.Forms.Label();
+            this.gbxGetByUnitPrice = new System.Windows.Forms.GroupBox();
+            this.btnGetByUnitPrice = new System.Windows.Forms.Button();
+            this.tbxMaxUnitPrice = new System.Windows.Forms.TextBox();
+            this.lblMaxPrice = new System.Windows.Forms.Label();
+            this.tbxMinUnitPrice = new System.Windows.Forms.TextBox();
+            this.lblMinPrice = new System.Windows.Forms.Label();
+            this.btnGetAllProducts = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwProducts)).BeginInit();
             this.gbxProductAdd.SuspendLayout();
             this.gbxProductUpdateOrDelete.SuspendLayout();
+            this.gbxProductSearchByName.SuspendLayout();
+            this.gbxGetByUnitPrice.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgwProducts
             // 
             this.dgwProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwProducts.Location = new System.Drawing.Point(17, 24);
+            this.dgwProducts.Location = new System.Drawing.Point(17, 78);
             this.dgwProducts.Name = "dgwProducts";
             this.dgwProducts.RowTemplate.Height = 25;
             this.dgwProducts.Size = new System.Drawing.Size(878, 291);
@@ -82,7 +94,7 @@
             this.gbxProductAdd.Controls.Add(this.btnProductAdd);
             this.gbxProductAdd.Controls.Add(this.tbxProductNameAdd);
             this.gbxProductAdd.Controls.Add(this.lblProductNameAdd);
-            this.gbxProductAdd.Location = new System.Drawing.Point(164, 321);
+            this.gbxProductAdd.Location = new System.Drawing.Point(163, 445);
             this.gbxProductAdd.Name = "gbxProductAdd";
             this.gbxProductAdd.Size = new System.Drawing.Size(285, 189);
             this.gbxProductAdd.TabIndex = 2;
@@ -150,7 +162,7 @@
             this.gbxProductUpdateOrDelete.Controls.Add(this.btnProductUpdate);
             this.gbxProductUpdateOrDelete.Controls.Add(this.tbxProductNameUpdate);
             this.gbxProductUpdateOrDelete.Controls.Add(this.lblProductNameUpdate);
-            this.gbxProductUpdateOrDelete.Location = new System.Drawing.Point(479, 321);
+            this.gbxProductUpdateOrDelete.Location = new System.Drawing.Point(478, 445);
             this.gbxProductUpdateOrDelete.Name = "gbxProductUpdateOrDelete";
             this.gbxProductUpdateOrDelete.Size = new System.Drawing.Size(298, 189);
             this.gbxProductUpdateOrDelete.TabIndex = 8;
@@ -241,12 +253,109 @@
             this.lblProductNameUpdate.TabIndex = 1;
             this.lblProductNameUpdate.Text = "Name:";
             // 
+            // gbxProductSearchByName
+            // 
+            this.gbxProductSearchByName.Controls.Add(this.tbxSearchByName);
+            this.gbxProductSearchByName.Controls.Add(this.lblSearchByName);
+            this.gbxProductSearchByName.Location = new System.Drawing.Point(17, 375);
+            this.gbxProductSearchByName.Name = "gbxProductSearchByName";
+            this.gbxProductSearchByName.Size = new System.Drawing.Size(383, 55);
+            this.gbxProductSearchByName.TabIndex = 9;
+            this.gbxProductSearchByName.TabStop = false;
+            this.gbxProductSearchByName.Text = "Product Search";
+            // 
+            // tbxSearchByName
+            // 
+            this.tbxSearchByName.Location = new System.Drawing.Point(146, 16);
+            this.tbxSearchByName.Name = "tbxSearchByName";
+            this.tbxSearchByName.Size = new System.Drawing.Size(231, 23);
+            this.tbxSearchByName.TabIndex = 8;
+            this.tbxSearchByName.TextChanged += new System.EventHandler(this.tbxSearchByName_TextChanged);
+            // 
+            // lblSearchByName
+            // 
+            this.lblSearchByName.AutoSize = true;
+            this.lblSearchByName.Location = new System.Drawing.Point(24, 19);
+            this.lblSearchByName.Name = "lblSearchByName";
+            this.lblSearchByName.Size = new System.Drawing.Size(119, 15);
+            this.lblSearchByName.TabIndex = 8;
+            this.lblSearchByName.Text = "Filter(Product name):";
+            // 
+            // gbxGetByUnitPrice
+            // 
+            this.gbxGetByUnitPrice.Controls.Add(this.btnGetAllProducts);
+            this.gbxGetByUnitPrice.Controls.Add(this.btnGetByUnitPrice);
+            this.gbxGetByUnitPrice.Controls.Add(this.tbxMaxUnitPrice);
+            this.gbxGetByUnitPrice.Controls.Add(this.lblMaxPrice);
+            this.gbxGetByUnitPrice.Controls.Add(this.tbxMinUnitPrice);
+            this.gbxGetByUnitPrice.Controls.Add(this.lblMinPrice);
+            this.gbxGetByUnitPrice.Location = new System.Drawing.Point(17, 12);
+            this.gbxGetByUnitPrice.Name = "gbxGetByUnitPrice";
+            this.gbxGetByUnitPrice.Size = new System.Drawing.Size(634, 55);
+            this.gbxGetByUnitPrice.TabIndex = 11;
+            this.gbxGetByUnitPrice.TabStop = false;
+            this.gbxGetByUnitPrice.Text = "Product Search";
+            // 
+            // btnGetByUnitPrice
+            // 
+            this.btnGetByUnitPrice.Location = new System.Drawing.Point(443, 15);
+            this.btnGetByUnitPrice.Name = "btnGetByUnitPrice";
+            this.btnGetByUnitPrice.Size = new System.Drawing.Size(75, 34);
+            this.btnGetByUnitPrice.TabIndex = 10;
+            this.btnGetByUnitPrice.Text = "Get";
+            this.btnGetByUnitPrice.UseVisualStyleBackColor = true;
+            this.btnGetByUnitPrice.Click += new System.EventHandler(this.btnGetByUnitPrice_Click);
+            // 
+            // tbxMaxUnitPrice
+            // 
+            this.tbxMaxUnitPrice.Location = new System.Drawing.Point(265, 22);
+            this.tbxMaxUnitPrice.Name = "tbxMaxUnitPrice";
+            this.tbxMaxUnitPrice.Size = new System.Drawing.Size(131, 23);
+            this.tbxMaxUnitPrice.TabIndex = 9;
+            // 
+            // lblMaxPrice
+            // 
+            this.lblMaxPrice.AutoSize = true;
+            this.lblMaxPrice.Location = new System.Drawing.Point(196, 25);
+            this.lblMaxPrice.Name = "lblMaxPrice";
+            this.lblMaxPrice.Size = new System.Drawing.Size(65, 15);
+            this.lblMaxPrice.TabIndex = 10;
+            this.lblMaxPrice.Text = "Max. Price:";
+            // 
+            // tbxMinUnitPrice
+            // 
+            this.tbxMinUnitPrice.Location = new System.Drawing.Point(85, 22);
+            this.tbxMinUnitPrice.Name = "tbxMinUnitPrice";
+            this.tbxMinUnitPrice.Size = new System.Drawing.Size(99, 23);
+            this.tbxMinUnitPrice.TabIndex = 8;
+            // 
+            // lblMinPrice
+            // 
+            this.lblMinPrice.AutoSize = true;
+            this.lblMinPrice.Location = new System.Drawing.Point(16, 24);
+            this.lblMinPrice.Name = "lblMinPrice";
+            this.lblMinPrice.Size = new System.Drawing.Size(63, 15);
+            this.lblMinPrice.TabIndex = 8;
+            this.lblMinPrice.Text = "Min. Price:";
+            // 
+            // btnGetAllProducts
+            // 
+            this.btnGetAllProducts.Location = new System.Drawing.Point(546, 10);
+            this.btnGetAllProducts.Name = "btnGetAllProducts";
+            this.btnGetAllProducts.Size = new System.Drawing.Size(88, 45);
+            this.btnGetAllProducts.TabIndex = 11;
+            this.btnGetAllProducts.Text = "Get All Products";
+            this.btnGetAllProducts.UseVisualStyleBackColor = true;
+            this.btnGetAllProducts.Click += new System.EventHandler(this.btnGetAllProducts_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(907, 510);
+            this.ClientSize = new System.Drawing.Size(907, 636);
+            this.Controls.Add(this.gbxGetByUnitPrice);
+            this.Controls.Add(this.gbxProductSearchByName);
             this.Controls.Add(this.gbxProductUpdateOrDelete);
             this.Controls.Add(this.gbxProductAdd);
             this.Controls.Add(this.dgwProducts);
@@ -258,6 +367,10 @@
             this.gbxProductAdd.PerformLayout();
             this.gbxProductUpdateOrDelete.ResumeLayout(false);
             this.gbxProductUpdateOrDelete.PerformLayout();
+            this.gbxProductSearchByName.ResumeLayout(false);
+            this.gbxProductSearchByName.PerformLayout();
+            this.gbxGetByUnitPrice.ResumeLayout(false);
+            this.gbxGetByUnitPrice.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -284,5 +397,15 @@
         private Label lblProductNameUpdate;
         private Label lblProductId;
         private TextBox tbxProductId;
+        private GroupBox gbxProductSearchByName;
+        private TextBox tbxSearchByName;
+        private Label lblSearchByName;
+        private GroupBox gbxGetByUnitPrice;
+        private Button btnGetByUnitPrice;
+        private TextBox tbxMaxUnitPrice;
+        private Label lblMaxPrice;
+        private TextBox tbxMinUnitPrice;
+        private Label lblMinPrice;
+        private Button btnGetAllProducts;
     }
 }

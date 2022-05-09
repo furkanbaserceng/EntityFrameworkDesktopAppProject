@@ -17,6 +17,7 @@ namespace EntityFrameworkProject
         {
             ListAllProducts();
             tbxProductId.Enabled = false;
+            btnGetAllProducts.Visible = false;
         }
 
         
@@ -70,6 +71,50 @@ namespace EntityFrameworkProject
 
         }
 
+        
+
+        private void btnProductDelete_Click(object sender, EventArgs e)
+        {
+
+            _productDal.Delete(new Product
+            {
+
+                Id=Convert.ToInt32( tbxProductId.Text )  //sadece id vermek yeterli
+
+
+            });
+            MessageBox.Show("Products Deleted Successfully!");
+            ListAllProducts();
+            ClearTextBoxUpdateOrDelete();
+
+        }
+
+        private void tbxSearchByName_TextChanged(object sender, EventArgs e)
+        {
+
+            dgwProducts.DataSource= _productDal.GetByNameFilter(tbxSearchByName.Text);
+
+
+        }
+
+      
+
+        private void btnGetByUnitPrice_Click(object sender, EventArgs e)
+        {
+            dgwProducts.DataSource = _productDal.GetByUnitPriceFilter(Convert.ToDecimal(tbxMinUnitPrice.Text), 
+                                                                    Convert.ToDecimal(tbxMaxUnitPrice.Text));
+            btnGetAllProducts.Visible = true;
+            btnGetByUnitPrice.Visible = false;
+        
+        }
+
+        private void btnGetAllProducts_Click(object sender, EventArgs e)
+        {
+            ListAllProducts();
+            btnGetAllProducts.Visible = false;
+            btnGetByUnitPrice.Visible = true;
+        }
+
         private void ListAllProducts()
         {
             dgwProducts.DataSource = _productDal.GetAll();
@@ -92,20 +137,6 @@ namespace EntityFrameworkProject
 
         }
 
-        private void btnProductDelete_Click(object sender, EventArgs e)
-        {
-
-            _productDal.Delete(new Product
-            {
-
-                Id=Convert.ToInt32( tbxProductId.Text )  //sadece id vermek yeterli
-
-
-            });
-            MessageBox.Show("Products Deleted Successfully!");
-            ListAllProducts();
-            ClearTextBoxUpdateOrDelete();
-
-        }
+       
     }
 }
