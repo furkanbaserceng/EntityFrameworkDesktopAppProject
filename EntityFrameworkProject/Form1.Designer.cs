@@ -38,6 +38,8 @@
             this.btnProductAdd = new System.Windows.Forms.Button();
             this.tbxProductNameAdd = new System.Windows.Forms.TextBox();
             this.gbxProductUpdateOrDelete = new System.Windows.Forms.GroupBox();
+            this.lblProductId = new System.Windows.Forms.Label();
+            this.tbxProductId = new System.Windows.Forms.TextBox();
             this.btnProductDelete = new System.Windows.Forms.Button();
             this.tbxProductStockAmountUpdate = new System.Windows.Forms.TextBox();
             this.lblProductStockAmountUpdate = new System.Windows.Forms.Label();
@@ -46,8 +48,6 @@
             this.btnProductUpdate = new System.Windows.Forms.Button();
             this.tbxProductNameUpdate = new System.Windows.Forms.TextBox();
             this.lblProductNameUpdate = new System.Windows.Forms.Label();
-            this.tbxProductId = new System.Windows.Forms.TextBox();
-            this.lblProductId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgwProducts)).BeginInit();
             this.gbxProductAdd.SuspendLayout();
             this.gbxProductUpdateOrDelete.SuspendLayout();
@@ -129,6 +129,7 @@
             this.btnProductAdd.TabIndex = 3;
             this.btnProductAdd.Text = "Add";
             this.btnProductAdd.UseVisualStyleBackColor = true;
+            this.btnProductAdd.Click += new System.EventHandler(this.btnProductAdd_Click);
             // 
             // tbxProductNameAdd
             // 
@@ -156,6 +157,22 @@
             this.gbxProductUpdateOrDelete.TabStop = false;
             this.gbxProductUpdateOrDelete.Text = "Product Update/Delete";
             // 
+            // lblProductId
+            // 
+            this.lblProductId.AutoSize = true;
+            this.lblProductId.Location = new System.Drawing.Point(79, 27);
+            this.lblProductId.Name = "lblProductId";
+            this.lblProductId.Size = new System.Drawing.Size(20, 15);
+            this.lblProductId.TabIndex = 10;
+            this.lblProductId.Text = "Id:";
+            // 
+            // tbxProductId
+            // 
+            this.tbxProductId.Location = new System.Drawing.Point(105, 22);
+            this.tbxProductId.Name = "tbxProductId";
+            this.tbxProductId.Size = new System.Drawing.Size(187, 23);
+            this.tbxProductId.TabIndex = 9;
+            // 
             // btnProductDelete
             // 
             this.btnProductDelete.Location = new System.Drawing.Point(200, 147);
@@ -164,6 +181,7 @@
             this.btnProductDelete.TabIndex = 8;
             this.btnProductDelete.Text = "Delete";
             this.btnProductDelete.UseVisualStyleBackColor = true;
+            this.btnProductDelete.Click += new System.EventHandler(this.btnProductDelete_Click);
             // 
             // tbxProductStockAmountUpdate
             // 
@@ -205,6 +223,7 @@
             this.btnProductUpdate.TabIndex = 3;
             this.btnProductUpdate.Text = "Update";
             this.btnProductUpdate.UseVisualStyleBackColor = true;
+            this.btnProductUpdate.Click += new System.EventHandler(this.btnProductUpdate_Click);
             // 
             // tbxProductNameUpdate
             // 
@@ -221,22 +240,6 @@
             this.lblProductNameUpdate.Size = new System.Drawing.Size(42, 15);
             this.lblProductNameUpdate.TabIndex = 1;
             this.lblProductNameUpdate.Text = "Name:";
-            // 
-            // tbxProductId
-            // 
-            this.tbxProductId.Location = new System.Drawing.Point(105, 22);
-            this.tbxProductId.Name = "tbxProductId";
-            this.tbxProductId.Size = new System.Drawing.Size(187, 23);
-            this.tbxProductId.TabIndex = 9;
-            // 
-            // lblProductId
-            // 
-            this.lblProductId.AutoSize = true;
-            this.lblProductId.Location = new System.Drawing.Point(79, 27);
-            this.lblProductId.Name = "lblProductId";
-            this.lblProductId.Size = new System.Drawing.Size(20, 15);
-            this.lblProductId.TabIndex = 10;
-            this.lblProductId.Text = "Id:";
             // 
             // Form1
             // 
